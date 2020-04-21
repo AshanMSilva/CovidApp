@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CurrentStatisticalService } from 'src/app/services/currentStatistical/current-statistical.service';
+import { CurrentStatistical } from 'src/shared/currentStatistical';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePage implements OnInit {
 
-  constructor() { }
+  currentStatistical: CurrentStatistical;
+  error:string;
+  constructor(
+    private currentStatisticalService: CurrentStatisticalService
+  ) { }
 
   ngOnInit() {
+    this.currentStatisticalService.getCurrentStatistical().subscribe(data =>this.currentStatistical =data, errmess =>this.error=<any>errmess);
+    
   }
 
 }
