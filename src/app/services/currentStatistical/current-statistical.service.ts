@@ -8,13 +8,14 @@ import { from } from 'rxjs';
 import { ProcessHttpmsgService } from '../processHttpmsg/process-httpmsg.service';
 import { baseURL } from 'src/shared/baseurl';
 import { CurrentStatistical } from 'src/shared/currentStatistical';
+import { HttpHeaders } from '@angular/common/http';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class CurrentStatisticalService {
-
+  
   constructor(
     private processHttpmsgService: ProcessHttpmsgService,
     public http: Http
@@ -24,4 +25,5 @@ export class CurrentStatisticalService {
   getCurrentStatistical(): Observable<CurrentStatistical>{
     return this.http.get(baseURL+'api/get-current-statistical').map(res=>{return this.processHttpmsgService.extractData(res)}).catch(error=>{return this.processHttpmsgService.handleError(error)});
   }
+  
 }

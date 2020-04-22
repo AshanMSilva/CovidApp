@@ -11,13 +11,19 @@ export class HomePage implements OnInit {
 
   currentStatistical: CurrentStatistical;
   error:string;
+  segmentValue:string;
   constructor(
     private currentStatisticalService: CurrentStatisticalService
   ) { }
 
   ngOnInit() {
+    this.segmentValue="local";
     this.currentStatisticalService.getCurrentStatistical().subscribe(data =>this.currentStatistical =data, errmess =>this.error=<any>errmess);
     
+  }
+  segmentChanged(ev: any) {
+    this.segmentValue = ev.detail.value;
+    console.log('Segment changed', ev.detail.value);
   }
 
 }
