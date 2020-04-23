@@ -1,5 +1,5 @@
 ion-menu ion-content {
-  --background: var(--ion-item-background, var(--ion-background-color, #fff));
+  --background: var(--ion-item-background, var(--ion-background-color, rgb(54, 93, 148)));
 }
 
 ion-menu.md ion-content {
@@ -116,4 +116,13 @@ ion-note {
 
 ion-item.selected {
   --color: var(--ion-color-primary);
+}
+.sidemenu{
+  background-color: rgb(54, 93, 148);
+}
+.sidemenu-item{
+  color: rgb(54, 93, 148);
+}
+.segment-label{
+  color: rgb(137, 237, 255);
 }

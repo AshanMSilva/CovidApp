@@ -1,6 +1,39 @@
-.homepage {
-    background-color: var(--ion-color-primary-tint);
-  }
+.local{
+    background-color: rgb(54, 93, 148);
+}
+.global{
+  background-color: rgb(54, 93, 148);
+}
 .warningcard{
     background-color: var(--ion-color-warning-light);
+}
+.card-font{
+  color: black;
+}
+.pinkcard{
+  background-color: rgb(250, 209, 215);
+}
+.newcard{
+  background-color: rgb(213, 230, 253);
+}
+.recoveredcard{
+  background-color: rgb(222, 252, 222);
+}
+.dangercard{
+  background-color: rgb(252, 177, 177);
+}
+.segment-toolbar{
+  background-color:rgb(3, 33, 77);
+}
+.segment-label{
+  color: rgb(137, 237, 255);
+}
+.homepage-header{
+  background-color: rgb(54, 93, 148);
+}
+.toolbar-segment{
+  background-color: rgb(54, 93, 148);
+}
+.toolbar{
+  color: rgb(3, 33, 77);
 }

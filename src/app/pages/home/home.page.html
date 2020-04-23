@@ -1,130 +1,132 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="light">
     <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
+      <ion-menu-button class="segment-label"></ion-menu-button>
     </ion-buttons>
-    <ion-title>Home</ion-title>
+    <ion-title class="segment-label">Home</ion-title>
   </ion-toolbar>
 </ion-header>
   
 <ion-content>
   <div *ngIf="currentStatistical" class="homepage">
-    <ion-header>
-      <ion-title align="center">COVID-19 Situation Report</ion-title>
-      <ion-card-subtitle align="center">{{currentStatistical.data.update_date_time}}</ion-card-subtitle>
+    <ion-header class="homepage-header">
+      <br>
+      <ion-card-title align="center" class="segment-label">COVID-19 Situation Report</ion-card-title>
+      <ion-card-subtitle align="center" class="segment-label">{{currentStatistical.data.update_date_time}}</ion-card-subtitle>
+      <br>
     </ion-header>
-      <ion-toolbar>
-        <ion-segment (ionChange)="segmentChanged($event)" value="local">
+      <ion-toolbar color="light">
+        <ion-segment (ionChange)="segmentChanged($event)" value="local" class="segment-toolbar">
           <ion-segment-button value="local">
-            <ion-label>Local</ion-label>
+            <ion-label class="segment-label">Local</ion-label>
           </ion-segment-button>
           <ion-segment-button value="global">
-            <ion-label>Global</ion-label>
+            <ion-label class="segment-label">Global</ion-label>
           </ion-segment-button>
         </ion-segment>
       </ion-toolbar>
-      <div *ngIf="segmentValue=='local'">
+      <div *ngIf="segmentValue=='local'" class="local">
         <ion-grid>
           <ion-row>
             <ion-col size="6">
               <ion-card style="height: 90%" class="warningcard">
                 <ion-card-content>
-                  <ion-card-subtitle  align="center" color="warning">Confirmed Cases</ion-card-subtitle>
+                  <ion-card-subtitle  align="center" class="card-font">Confirmed Cases</ion-card-subtitle>
                   <img src="../../../assets/icon/hospital.png" alt="">
-                  <ion-card-subtitle align="center" color="warning">{{currentStatistical.data.local_total_cases}}</ion-card-subtitle>
+                  <ion-card-subtitle align="center" class="card-font" >{{currentStatistical.data.local_total_cases}}</ion-card-subtitle>
                 </ion-card-content>
               </ion-card>
             </ion-col>
             <ion-col size="6">
-              <ion-card style="height: 90%">
+              <ion-card style="height: 90%" class="pinkcard">
                 <ion-card-content>
-                  <ion-card-subtitle  align="center" color="danger">Active Cases</ion-card-subtitle>
+                  <ion-card-subtitle  align="center" class="card-font">Active Cases</ion-card-subtitle>
                   <img src="../../../assets/icon/heart-disease.png" alt="">
-                  <ion-card-subtitle align="center" color="danger">{{currentStatistical.data.local_active_cases}}</ion-card-subtitle>
+                  <ion-card-subtitle align="center" class="card-font">{{currentStatistical.data.local_active_cases}}</ion-card-subtitle>
                 </ion-card-content>
               </ion-card>
             </ion-col>
           </ion-row>
           <ion-row>
             <ion-col size="6">
-              <ion-card style="height: 90%">
+              <ion-card style="height: 90%" class="newcard">
                 <ion-card-content>
-                  <ion-card-subtitle align="center" color="primary">New Cases</ion-card-subtitle>
+                  <ion-card-subtitle align="center" class="card-font">New Cases</ion-card-subtitle>
                   <img src="../../../assets/icon/ambulance.png" alt="">
-                  <ion-card-subtitle align="center" color="primary">{{currentStatistical.data.local_new_cases}}</ion-card-subtitle>
+                  <ion-card-subtitle align="center" class="card-font">{{currentStatistical.data.local_new_cases}}</ion-card-subtitle>
                 </ion-card-content>
               </ion-card>
             </ion-col>
             <ion-col size="6">
-              <ion-card style="height: 90%">
+              <ion-card style="height: 90%" class="newcard">
                 <ion-card-content>
-                  <ion-card-subtitle align="center" color="primary">Investigating</ion-card-subtitle>
+                  <ion-card-subtitle align="center" class="card-font">Investigating</ion-card-subtitle>
                   <img src="../../../assets/icon/hospital-care.png" alt="">
-                  <ion-card-subtitle align="center" color="primary">{{currentStatistical.data.local_total_number_of_individuals_in_hospitals}}</ion-card-subtitle>
+                  <ion-card-subtitle align="center" class="card-font">{{currentStatistical.data.local_total_number_of_individuals_in_hospitals}}</ion-card-subtitle>
                 </ion-card-content>
               </ion-card>
             </ion-col>
           </ion-row>
           <ion-row>
             <ion-col size="6">
-              <ion-card style="height: 90%">
+              <ion-card style="height: 90%" class="recoveredcard">
                 <ion-card-content>
-                  <ion-card-subtitle  align="center" color="success">Recovered</ion-card-subtitle>
+                  <ion-card-subtitle  align="center" class="card-font">Recovered</ion-card-subtitle>
                   <img src="../../../assets/icon/run.png" alt="">
-                  <ion-card-subtitle align="center" color="success">{{currentStatistical.data.local_recovered}}</ion-card-subtitle>
+                  <ion-card-subtitle align="center" class="card-font">{{currentStatistical.data.local_recovered}}</ion-card-subtitle>
                 </ion-card-content>
               </ion-card>
             </ion-col>
             <ion-col size="6">
-              <ion-card style="height: 90%">
+              <ion-card style="height: 90%" class="dangercard">
                 <ion-card-content>
-                  <ion-card-subtitle  align="center" color="danger">Deaths</ion-card-subtitle>
+                  <ion-card-subtitle  align="center" class="card-font">Total Deaths</ion-card-subtitle>
                   <img src="../../../assets/icon/sleep-in-bed.png" alt="">
-                  <ion-card-subtitle align="center" color="danger">{{currentStatistical.data.local_deaths}}</ion-card-subtitle>
+                  <ion-card-subtitle align="center" class="card-font">{{currentStatistical.data.local_deaths}}</ion-card-subtitle>
                 </ion-card-content>
               </ion-card>
             </ion-col>
           </ion-row>
         </ion-grid>
       </div>
-      <div *ngIf="segmentValue=='global'">
+      <div *ngIf="segmentValue=='global'" class="global">
         <ion-grid>
           <ion-row>
             <ion-col size="6">
-              <ion-card style="height: 90%">
+              <ion-card style="height: 90%" class="warningcard">
                 <ion-card-content>
-                  <ion-card-subtitle  align="center" color="warning">Confirmed Cases</ion-card-subtitle>
+                  <ion-card-subtitle  align="center" class="card-font">Confirmed Cases</ion-card-subtitle>
                   <img src="../../../assets/icon/hospital.png" alt="">
-                  <ion-card-subtitle align="center" color="warning">{{currentStatistical.data.global_total_cases}}</ion-card-subtitle>
+                  <ion-card-subtitle align="center" class="card-font">{{currentStatistical.data.global_total_cases}}</ion-card-subtitle>
                 </ion-card-content>
               </ion-card>
             </ion-col>
             <ion-col size="6">
-              <ion-card style="height: 90%">
+              <ion-card style="height: 90%" class="newcard">
                 <ion-card-content>
-                  <ion-card-subtitle align="center" color="primary">New Cases</ion-card-subtitle>
+                  <ion-card-subtitle align="center" class="card-font">New Cases</ion-card-subtitle>
                   <img src="../../../assets/icon/ambulance.png" alt="">
-                  <ion-card-subtitle align="center" color="primary">{{currentStatistical.data.global_new_cases}}</ion-card-subtitle>
+                  <ion-card-subtitle align="center" class="card-font">{{currentStatistical.data.global_new_cases}}</ion-card-subtitle>
                 </ion-card-content>
               </ion-card>
             </ion-col>
           </ion-row>
           <ion-row>
             <ion-col size="6">
-              <ion-card style="height: 90%">
+              <ion-card style="height: 90%" class="recoveredcard">
                 <ion-card-content>
-                  <ion-card-subtitle  align="center" color="success">Recovered</ion-card-subtitle>
+                  <ion-card-subtitle  align="center" class="card-font">Recovered</ion-card-subtitle>
                   <img src="../../../assets/icon/run.png" alt="">
-                  <ion-card-subtitle align="center" color="success">{{currentStatistical.data.global_recovered}}</ion-card-subtitle>
+                  <ion-card-subtitle align="center" class="card-font">{{currentStatistical.data.global_recovered}}</ion-card-subtitle>
                 </ion-card-content>
               </ion-card>
             </ion-col>
             <ion-col size="6">
-              <ion-card style="height: 90%">
+              <ion-card style="height: 90%" class="dangercard">
                 <ion-card-content>
-                  <ion-card-subtitle  align="center" color="danger">Deaths</ion-card-subtitle>
+                  <ion-card-subtitle  align="center" class="card-font">Total Deaths</ion-card-subtitle>
                   <img src="../../../assets/icon/sleep-in-bed.png" alt="">
-                  <ion-card-subtitle align="center" color="danger">{{currentStatistical.data.global_deaths}}</ion-card-subtitle>
+                  <ion-card-subtitle align="center" class="card-font">{{currentStatistical.data.global_deaths}}</ion-card-subtitle>
                 </ion-card-content>
               </ion-card>
             </ion-col>
