@@ -2,6 +2,7 @@ import { HospitalData } from './hospitalData';
 
 export class Data{
     update_date_time: string;
+    local_total_cases:string;
     local_new_cases:number;
     local_total_number_of_individuals_in_hospitals: number;
     local_deaths:number;
