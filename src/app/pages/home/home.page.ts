@@ -52,7 +52,15 @@ export class HomePage implements OnInit {
   }
   segmentChanged(ev: any) {
     this.segmentValue = ev.detail.value;
-    console.log('Segment changed', ev.detail.value);
+  }
+  doRefresh(event) {
+    this.segmentValue="local";
+    this.currentStatisticalService.getCurrentStatistical().subscribe(data =>this.currentStatistical =data, errmess =>this.error=<any>errmess);
+
+    setTimeout(() => {
+      
+      event.target.complete();
+    }, 2000);
   }
   
 

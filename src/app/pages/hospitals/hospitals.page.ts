@@ -46,5 +46,17 @@ export class HospitalsPage implements OnInit {
   goToHospitalData(hospitalData:HospitalData){
     this.navCtrl.navigateForward(['hospital',{hospitalData:JSON.stringify(hospitalData)}]);
   }
+  doRefresh(event) {
+    this.currentStatisticalService.getCurrentStatistical().subscribe(statistics =>{ 
+      this.currentStatistical = statistics;
+      if(this.currentStatistical != undefined){
+        this.hospitalsData = this.currentStatistical.data.hospital_data;
+      }
+    }, error => this.error=error);
+    setTimeout(() => {
+      
+      event.target.complete();
+    }, 2000);
+  }
 
 }

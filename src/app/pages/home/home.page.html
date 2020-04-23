@@ -8,6 +8,9 @@
 </ion-header>
   
 <ion-content  color="medium">
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
   <div *ngIf="currentStatistical" class="homepage">
     <ion-header class="homepage-header">
       <br>
