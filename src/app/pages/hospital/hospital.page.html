@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar color="light">
+    <ion-buttons slot="start">
+      <ion-back-button class="segment-label"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="segment-label">Hospital Information</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="hospitalData" class="segment-toolbar" >
+    <ion-header class="homepage-header">
+      <br>
+      <ion-card-title align="center" class="segment-label card-fontsize">{{hospitalData.hospital.name}}</ion-card-title>
+      <ion-card-subtitle align="center" class="segment-label subcard-fontsize">{{hospitalData.hospital.name_si}}</ion-card-subtitle>
+      <ion-card-subtitle align="center" class="segment-label subcard-fontsize">{{hospitalData.hospital.name_ta}}</ion-card-subtitle>
+      <br>
+    </ion-header>
+    <div>
+      <ion-card class="newcard">
+        <ion-card-content>
+          <ion-card-title align="center" class="smallcardtitle-fontsize" color="light">Cumulative Details</ion-card-title>
+          <ion-list class="newcard">
+            <ion-item color="dark">
+              <ion-label class="smallcard-fontsize cards-font">Foreign Count:</ion-label>
+              <h3 class="cards-font">{{hospitalData.cumulative_foreign}}</h3>
+            </ion-item>
+            <ion-item color="dark">
+              <ion-label class="smallcard-fontsize cards-font">Local Count:</ion-label>
+              <h3 class="cards-font">{{hospitalData.cumulative_local}}</h3>
+            </ion-item>
+            <ion-item color="dark">
+              <ion-label class="smallcard-fontsize cards-font">Total Count:</ion-label>
+              <h3 class="cards-font">{{hospitalData.cumulative_total}}</h3>
+            </ion-item>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+      <ion-card class="newcard">
+        <ion-card-content>
+          <ion-card-title align="center" class="smallcardtitle-fontsize" color="light">Treatment Details</ion-card-title>
+          <ion-list class="newcard">
+            <ion-item color="dark">
+              <ion-label class="smallcard-fontsize cards-font">Foreign Count:</ion-label>
+              <h3 class="cards-font">{{hospitalData.treatment_foreign}}</h3>
+            </ion-item>
+            <ion-item color="dark">
+              <ion-label class="smallcard-fontsize cards-font">Local Count:</ion-label>
+              <h3 class="cards-font">{{hospitalData.treatment_local}}</h3>
+            </ion-item>
+            <ion-item color="dark">
+              <ion-label class="smallcard-fontsize cards-font">Total Count:</ion-label>
+              <h3 class="cards-font">{{hospitalData.treatment_total}}</h3>
+            </ion-item>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+
+</ion-content>

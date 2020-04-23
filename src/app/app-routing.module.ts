@@ -18,6 +18,10 @@ const routes: Routes = [
   {
     path: 'hospitals',
     loadChildren: () => import('./pages/hospitals/hospitals.module').then( m => m.HospitalsPageModule)
+  },
+  {
+    path: 'hospital',
+    loadChildren: () => import('./pages/hospital/hospital.module').then( m => m.HospitalPageModule)
   }
 ];
 

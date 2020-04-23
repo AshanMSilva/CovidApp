@@ -7,7 +7,7 @@
   </ion-toolbar>
 </ion-header>
   
-<ion-content>
+<ion-content  color="medium">
   <div *ngIf="currentStatistical" class="homepage">
     <ion-header class="homepage-header">
       <br>
@@ -134,13 +134,13 @@
         </ion-grid>
       </div>
     </div>
-  <div [hidden]="currentStatistical || error">
-    <ion-spinner></ion-spinner>
-    <h4>Loading . . . Please Wait</h4>
+  <div [hidden]="currentStatistical || error" class="homepage-header">
+    <ion-spinner color="dark"></ion-spinner>
+    <h4 class="segment-label">Loading . . . Please Wait</h4>
   </div>
-  <div *ngIf= "error">
-    <h2>Error Occured</h2>
-    <h4>{{error}}</h4>
+  <div *ngIf= "error" class="homepage-header">
+    <h2 class="segment-label">Error Occured</h2>
+    <h4 class="segment-label">Please Check Your Internet or Try again Later.</h4>
   </div>
 
 </ion-content>

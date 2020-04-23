@@ -18,6 +18,11 @@ export class AppComponent {
       icon: 'home'
     },
     {
+      title: 'Hospitals',
+      url: '/hospitals',
+      icon: 'medkit-outline'
+    },
+    {
       title: 'About Us',
       url: '/about',
       icon: 'information-circle-outline'

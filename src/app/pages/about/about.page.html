@@ -1,12 +1,73 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
+  <ion-toolbar color="light">
+    <ion-buttons slot="start" class="segment-label">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>About Us</ion-title>
+    <ion-title class="segment-label">About Us</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content fullscreen>
+  <div class="newcard">
+    <ion-card-header>
+      <ion-card-title align="center" color="light">Team Íota</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p class="toolbar">We are a group of creative and enthusiastic undergraduate developers hoping to provide solutions to help you with your day to day life. Identifying, Analyzing and digitally solving problems for you is our passion. </p>
+      <br>
+      <p class="toolbar">Stay tuned for more apps and solutions.</p>
+      <br>
+      <p class="toolbar">We are team Íota!</p>
+      
+      
+      <ion-list class="newcard">
+        <ion-list-header>
+          <h2 class="toolbar">Team Members</h2>
+        </ion-list-header>
+        <ion-item color="dark">
+          <ion-avatar slot="start">
+            <img src="../../../assets/icon/default-avatar.jpg">
+          </ion-avatar>
+          <ion-label>
+            <h3 class="toolbar">E. A. M. SILVA</h3>
+            
+            
+          </ion-label>
+        </ion-item>
+        <ion-item color="dark">
+          <ion-avatar slot="start">
+            <img src="../../../assets/icon/default-avatar.jpg">
+          </ion-avatar>
+          <ion-label>
+            <h3 class="toolbar">L. R. RAMBUKKANAGE</h3>
+            
+          </ion-label>
+        </ion-item>
+        <ion-item color="dark">
+          <ion-avatar slot="start">
+            <img src="../../../assets/icon/default-avatar.jpg">
+          </ion-avatar>
+          <ion-label>
+            <h3 class="toolbar">J. A. S. P. JAYASINGHE</h3>
+            
+          </ion-label>
+        </ion-item>
+        <ion-item color="dark">
+          <ion-avatar slot="start">
+            <img src="../../../assets/icon/default-avatar.jpg">
+          </ion-avatar>
+          <ion-label>
+            <h3 class="toolbar">R. M. V. T. SHANTHA</h3>
+            
+            
+          </ion-label>
+        </ion-item> 
+      </ion-list>
+      <ion-row>
+        <ion-col>
+          <ion-button (click)="sendEmail()" color="light" expand="block"><ion-icon name="mail" icon-left color="dark"></ion-icon>  <h3 class="button-letter"> EMAIL US</h3></ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </div>
 </ion-content>

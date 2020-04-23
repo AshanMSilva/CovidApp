@@ -1,9 +1,32 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>hospitals</ion-title>
+  <ion-toolbar color="light">
+    <ion-buttons slot="start">
+      <ion-menu-button class="segment-label"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="segment-label">Hospitals</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content color="medium">
+  <div *ngIf="hospitalsData" class="homepage-header">
+    <ion-list class="homepage-header">
+      <ion-item *ngFor="let hospitalData of hospitalsData" color="medium">
+        <ion-label (click)="goToHospitalData(hospitalData)">
+          <h4 class="segment-label">{{hospitalData.hospital.name}}</h4>
+          <p class="hospital-name">{{hospitalData.hospital.name_si}}</p>
+          <p class="hospital-name">{{hospitalData.hospital.name_ta}}</p>
+        </ion-label>
+        
+      </ion-item>
+    </ion-list>
+  </div>
+  <div [hidden]="hospitalsData || error" class="homepage-header">
+    <ion-spinner color="dark"></ion-spinner>
+    <h4 class="segment-label">Loading . . . Please Wait</h4>
+  </div>
+  <div *ngIf= "error" class="homepage-header">
+    <h2 class="segment-label">Error Occured</h2>
+    <h4 class="segment-label">Please Check Your Internet or Try again Later.</h4>
+  </div>
 
 </ion-content>

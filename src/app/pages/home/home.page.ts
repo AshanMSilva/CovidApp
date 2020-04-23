@@ -25,5 +25,6 @@ export class HomePage implements OnInit {
     this.segmentValue = ev.detail.value;
     console.log('Segment changed', ev.detail.value);
   }
+  
 
 }
