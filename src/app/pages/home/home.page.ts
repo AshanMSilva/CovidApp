@@ -55,6 +55,7 @@ export class HomePage implements OnInit {
   }
   doRefresh(event) {
     this.segmentValue="local";
+    this.error= undefined;
     this.currentStatisticalService.getCurrentStatistical().subscribe(data =>this.currentStatistical =data, errmess =>this.error=<any>errmess);
 
     setTimeout(() => {
