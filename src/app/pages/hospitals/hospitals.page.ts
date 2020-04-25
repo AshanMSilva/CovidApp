@@ -48,6 +48,8 @@ export class HospitalsPage implements OnInit {
   }
   doRefresh(event) {
     this.error = undefined;
+    this.currentStatistical = undefined;
+    this.hospitalsData = undefined;
     this.currentStatisticalService.getCurrentStatistical().subscribe(statistics =>{ 
       this.currentStatistical = statistics;
       if(this.currentStatistical != undefined){
